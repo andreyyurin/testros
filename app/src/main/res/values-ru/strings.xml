@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Test Task</string>
-
     <string name="main_bottom_search">Поиск</string>
     <string name="main_bottom_cities">Все города</string>
     <string name="main_bottom_map">Карта</string>

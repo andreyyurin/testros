@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test Task</string>
+    <string name="main_bottom_search">Search</string>
+    <string name="main_bottom_cities">All cities</string>
+    <string name="main_bottom_map">Map</string>
+</resources>
