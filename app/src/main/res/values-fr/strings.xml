@@ -4,4 +4,11 @@
     <string name="main_bottom_cities">Toutes les villes</string>
     <string name="main_bottom_search">Chercher</string>
     <string name="main_bottom_map">Carte</string>
+    <string name="fr_main_search_hint">Entrez le titre</string>
+    <string name="fr_main_search_name">Chercher</string>
+    <string name="fr_main_city_wet">Humidité</string>
+    <string name="fr_main_city_clouds">Nébulosité</string>
+    <string name="fr_main_city_temp">Température</string>
+    <string name="fr_main_city_date">Date</string>
+    <string name="fr_main_city_name">Ville</string>
 </resources>

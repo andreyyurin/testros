@@ -6,18 +6,31 @@ import android.view.View
 import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatFragment
 import kotlinx.coroutines.Dispatchers
+import sad.ru.testros.custom.Store
 import sad.ru.testros.retrofit.RetrofitClientInstance
 import sad.ru.testros.retrofit.RetrofitService
 import kotlin.coroutines.CoroutineContext
 
-abstract class BaseFragment(protected val uiContext: CoroutineContext = Dispatchers.Main) :
+abstract class BaseFragment() :
     MvpAppCompatFragment(), BaseView {
 
     lateinit var service: RetrofitService
+    lateinit var store: Store
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        initService()
+        initStore()
+    }
+
+    private fun initService() {
         service =
             RetrofitClientInstance.retrofitInstance!!.create(RetrofitService::class.java)
+    }
+
+    private fun initStore() {
+        store = Store(this.requireContext())
     }
 
     override fun onCreateView(

@@ -4,4 +4,13 @@
     <string name="main_bottom_search">Поиск</string>
     <string name="main_bottom_cities">Все города</string>
     <string name="main_bottom_map">Карта</string>
+
+    <string name="fr_main_search_hint">Введите название</string>
+    <string name="fr_main_search_name">Поиск</string>
+    <string name="fr_main_city_name">Город</string>
+    <string name="fr_main_city_date">Дата</string>
+    <string name="fr_main_city_temp">Температура</string>
+    <string name="fr_main_city_clouds">Облачность</string>
+    <string name="fr_main_city_wet">Влажность</string>
+
 </resources>

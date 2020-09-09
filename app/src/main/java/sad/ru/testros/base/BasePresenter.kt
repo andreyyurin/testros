@@ -2,10 +2,7 @@ package sad.ru.testros.base
 
 import android.util.Log
 import com.arellomobile.mvp.MvpPresenter
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,8 +25,6 @@ abstract class BasePresenter<View : BaseView>(protected val uiContext: Coroutine
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-//        service =
-//            RetrofitClientInstance.retrofitInstance!!.create(DataService::class.java)
     }
 
     fun <obj : Any?> loadData(needFunc: Call<obj>, setData: (obj) -> Unit) {
@@ -43,5 +38,16 @@ abstract class BasePresenter<View : BaseView>(protected val uiContext: Coroutine
                 setData.invoke(response.body()!!)
             }
         })
+    }
+
+    protected fun withExceptionHandler() = CoroutineExceptionHandler { _, t ->
+        {
+            t.printStackTrace()
+            showErrorOrSomething(t)
+        }
+    }
+
+    private fun showErrorOrSomething(t: Throwable) {
+        Log.e("http-error", "err:" + t.localizedMessage)
     }
 }

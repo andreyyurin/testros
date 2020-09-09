@@ -19,25 +19,29 @@ android {
     }
 
     def BASE_URL = "BASE_URL"
+    def BASE_API_KEY = "BASE_API_KEY"
     def STRING = "String"
 
     buildTypes {
         release {
             minifyEnabled false
             debuggable true
-            buildConfigField STRING, BASE_URL, "\"http://warstores.net/ws_srv/\""
+            buildConfigField STRING, BASE_URL, "\"http://api.openweathermap.org/data/2.5/weather/\""
+            buildConfigField STRING, BASE_API_KEY, "\"d514f751d2f63a26e912472bb14a7fa8\""
         }
         debug {
             minifyEnabled false
             debuggable true
-            buildConfigField STRING, BASE_URL, "\"http://warstores.net/ws_srv/\""
-//                shrinkResources true
+            buildConfigField STRING, BASE_URL, "\"http://api.openweathermap.org/data/2.5/weather/\""
+            buildConfigField STRING, BASE_API_KEY, "\"d514f751d2f63a26e912472bb14a7fa8\""
         }
     }
 
 }
 
 dependencies {
+
+    // Android Support libs
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -68,4 +72,7 @@ dependencies {
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0"
+
+    // Material Search bar
+    implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
 }

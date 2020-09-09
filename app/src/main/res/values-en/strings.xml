@@ -4,4 +4,11 @@
     <string name="main_bottom_search">Search</string>
     <string name="main_bottom_cities">All cities</string>
     <string name="main_bottom_map">Map</string>
+    <string name="fr_main_search_hint">Enter name</string>
+    <string name="fr_main_search_name">Search</string>
+    <string name="fr_main_city_name">City</string>
+    <string name="fr_main_city_date">Date</string>
+    <string name="fr_main_city_temp">Temperature</string>
+    <string name="fr_main_city_clouds">Cloudiness</string>
+    <string name="fr_main_city_wet">Humidity</string>
 </resources>
