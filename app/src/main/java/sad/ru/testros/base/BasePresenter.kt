@@ -35,7 +35,9 @@ abstract class BasePresenter<View : BaseView>(protected val uiContext: Coroutine
             }
 
             override fun onResponse(call: Call<obj>, response: Response<obj>) {
-                setData.invoke(response.body()!!)
+                CoroutineScope(uiContext + withExceptionHandler()).launch{
+                    setData.invoke(response.body()!!)
+                }
             }
         })
     }

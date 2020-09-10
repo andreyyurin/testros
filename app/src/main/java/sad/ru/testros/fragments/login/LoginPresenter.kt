@@ -7,7 +7,11 @@ import sad.ru.testros.navigation.AllScreens
 
 @InjectViewState
 class LoginPresenter : BasePresenter<LoginView>() {
-    fun onCitiesScreen() {
-        router?.replaceScreen(AllScreens.CitiesScreen(Consts.CITIES_SCREEN))
+    fun onMainScreen() {
+        router?.replaceScreen(AllScreens.MainScreen(Consts.MAIN_SCREEN))
+    }
+
+    fun onRegisterScreen(login: String, pass: String) {
+        router?.navigateTo(AllScreens.RegisterScreen(login, pass, Consts.REGISTER_SCREEN))
     }
 }

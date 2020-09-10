@@ -19,9 +19,13 @@ class AllScreens {
         }
     }
 
-    class RegisterScreen(private val key: String) : SupportAppScreen() {
+    class RegisterScreen(
+        private val login: String,
+        private val pass: String,
+        private val key: String
+    ) : SupportAppScreen() {
         override fun getFragment(): Fragment? {
-            return RegisterFragment()
+            return RegisterFragment.newInstance(login, pass)
         }
 
         init {

@@ -17,5 +17,35 @@ class LoginFragment : BaseFragment(), LoginView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initEnterListener()
+    }
+
+    private fun initEnterListener() {
+        btn_enter.setOnClickListener {
+            checkLogin()
+        }
+    }
+
+    private fun checkLogin() {
+        if (et_login.text.toString().isEmpty() || et_password.text.toString().isEmpty()) {
+            showToast("Заполните все поля")
+            return
+        }
+
+        if (store.getPassword(et_login.text.toString()) == et_password.text.toString()) {
+            openMainScreen()
+        } else if (store.getPassword(et_login.text.toString()).isNotEmpty()) {
+            showToast("Введен неправильный пароль")
+        } else {
+            openRegisterScreen(et_login.text.toString(), et_password.text.toString())
+        }
+    }
+
+    private fun openRegisterScreen(login: String, pass: String) {
+        presenter.onRegisterScreen(login, pass)
+    }
+
+    private fun openMainScreen() {
+        presenter.onMainScreen()
     }
 }
