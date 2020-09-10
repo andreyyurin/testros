@@ -11,4 +11,12 @@
     <string name="fr_main_city_temp">Température</string>
     <string name="fr_main_city_date">Date</string>
     <string name="fr_main_city_name">Ville</string>
+    <string name="fr_login_enter">Entrer</string>
+    <string name="fr_login_log">S\'identifier</string>
+    <string name="fr_login_pass">Mot de passe</string>
+    <string name="fr_register_log">S\'identifier</string>
+    <string name="fr_register_pass">Mot de passe</string>
+    <string name="fr_register_repass">Confirmer le mot de passe</string>
+    <string name="fr_register_register">S\'inscrire maintenant</string>
+    <string name="fr_register_name">Nom</string>
 </resources>

@@ -13,4 +13,14 @@
     <string name="fr_main_city_clouds">Облачность</string>
     <string name="fr_main_city_wet">Влажность</string>
 
+    <string name="fr_login_log">Логин</string>
+    <string name="fr_login_pass">Пароль</string>
+    <string name="fr_login_enter">Войти</string>
+
+    <string name="fr_register_log">Логин</string>
+    <string name="fr_register_pass">Пароль</string>
+    <string name="fr_register_repass">Подтвердите пароль</string>
+    <string name="fr_register_register">Зарегистрироваться</string>
+    <string name="fr_register_name">Имя</string>
+
 </resources>

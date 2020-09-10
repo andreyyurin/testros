@@ -22,6 +22,7 @@ class MainFragment : BaseFragment(), MainView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initSearchListener()
     }
 
@@ -34,6 +35,7 @@ class MainFragment : BaseFragment(), MainView {
         wet.text = "${data.main.humidity}%"
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun getNowDate(): String {
         val sdf = SimpleDateFormat("dd.M.yyyy hh:mm:ss")
         return sdf.format(Date())
