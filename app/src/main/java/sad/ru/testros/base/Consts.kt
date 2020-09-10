@@ -7,5 +7,6 @@ class Consts {
         const val MAP_SCREEN = "MapScreen"
         const val CITIES_SCREEN = "CitiesScreen"
         const val MAIN_SCREEN = "MainScreen"
+        const val LOCATION_REQUEST_CODE = 311
     }
 }
