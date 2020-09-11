@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test Task</string>
+    <string name="main_bottom_search">Search</string>
+    <string name="main_bottom_cities">All cities</string>
+    <string name="main_bottom_map">Map</string>
+    <string name="fr_main_search_hint">Enter name</string>
+    <string name="fr_main_search_name">Search</string>
+    <string name="fr_main_city_name">City</string>
+    <string name="fr_main_city_date">Date</string>
+    <string name="fr_main_city_temp">Temperature</string>
+    <string name="fr_main_city_clouds">Cloudiness</string>
+    <string name="fr_main_city_wet">Humidity</string>
+    <string name="fr_register_register">Register now</string>
+    <string name="fr_register_repass">Confirm the password</string>
+    <string name="fr_register_pass">Password</string>
+    <string name="fr_register_log">Login</string>
+    <string name="fr_login_enter">Enter</string>
+    <string name="fr_login_pass">Password</string>
+    <string name="fr_login_log">Login</string>
+    <string name="fr_register_name">Name</string>
+</resources>

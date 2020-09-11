@@ -1,11 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Test Task</string>
-    <string name="maps_api_key" translatable="false">AIzaSyCEqxMH020L-kQJA8qCphlf04ccCDX_ryw</string>
-
     <string name="main_bottom_search">Поиск</string>
     <string name="main_bottom_cities">Все города</string>
     <string name="main_bottom_map">Карта</string>
-
     <string name="fr_main_search_hint">Введите название</string>
     <string name="fr_main_search_name">Поиск</string>
     <string name="fr_main_city_name">Город</string>
@@ -13,15 +11,12 @@
     <string name="fr_main_city_temp">Температура</string>
     <string name="fr_main_city_clouds">Облачность</string>
     <string name="fr_main_city_wet">Влажность</string>
-
     <string name="fr_login_log">Логин</string>
     <string name="fr_login_pass">Пароль</string>
     <string name="fr_login_enter">Войти</string>
-
     <string name="fr_register_log">Логин</string>
     <string name="fr_register_pass">Пароль</string>
-    <string name="fr_register_repass">Подтвердите пароль</string>
+    <string name="fr_register_repass">Подвердите пароль</string>
     <string name="fr_register_register">Зарегистрироваться</string>
     <string name="fr_register_name">Имя</string>
-
 </resources>

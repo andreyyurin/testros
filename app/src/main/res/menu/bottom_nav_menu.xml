@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_nav_action_main"
+        android:enabled="true"
+        android:icon="@drawable/ic_search"
+        android:title="@string/main_bottom_search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/bottom_nav_action_cities"
+        android:enabled="true"
+        android:icon="@drawable/ic_cities"
+        android:title="@string/main_bottom_cities"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/bottom_nav_action_map"
+        android:enabled="true"
+        android:icon="@drawable/ic_map"
+        android:title="@string/main_bottom_map"
+        app:showAsAction="ifRoom" />
+</menu>
