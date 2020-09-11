@@ -1,5 +1,7 @@
 package sad.ru.testros.activity.main
 
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -8,6 +10,8 @@ import ru.terrakok.cicerone.Navigator
 import sad.ru.testros.MainNavigator
 import sad.ru.testros.R
 import sad.ru.testros.base.BaseActivity
+import sad.ru.testros.custom.Store
+
 
 class MainActivity : BaseActivity(), MainActView {
     @InjectPresenter
@@ -15,16 +19,45 @@ class MainActivity : BaseActivity(), MainActView {
 
     override lateinit var navigator: Navigator
 
+    lateinit var store: Store
+
     override fun layoutId(): Int = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initStore()
+        initLocale()
+
         initNavigator()
         initBottomNavigationView(savedInstanceState)
 
         openFirstScreen()
+    }
+
+    private fun initStore() {
+        store = Store(this)
+    }
+
+    private fun initLocale() {
+        val resources: Resources = resources
+        val configuration: Configuration = resources.configuration
+
+        when {
+            configuration.locale.toLanguageTag().trim().toLowerCase().contains("ru") -> {
+                store.saveLanguage("ru")
+            }
+            configuration.locale.toLanguageTag().trim().toLowerCase().contains("en") -> {
+                store.saveLanguage("en")
+            }
+            configuration.locale.toLanguageTag().trim().toLowerCase().contains("fr") -> {
+                store.saveLanguage("fr")
+            }
+            else -> {
+                store.saveLanguage("ru")
+            }
+        }
     }
 
     override fun showBottomMenu(show: Boolean) {

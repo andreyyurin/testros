@@ -2,10 +2,13 @@ package sad.ru.testros.fragments.map
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.location.Location
 import android.os.Bundle
 import android.os.Looper
 import android.view.View
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -73,19 +76,35 @@ class MapFragment : BaseFragment(), MapView, OnMapReadyCallback {
     }
 
     private fun initCircleAndMarker() {
+        val icon = getBitmapDescriptor(R.drawable.ic_gps_marker_black)
         val mp = MarkerOptions()
-            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+            .icon(icon)
             .visible(false)
             .position(LatLng(0.0, 0.0))
 
         val circleOptions = CircleOptions()
         circleOptions.center(LatLng(0.0, 0.0))
         circleOptions.radius(0.0)
-        circleOptions.fillColor(0x30ff0000)
+        circleOptions.fillColor(0x15808080)
         circleOptions.strokeWidth(2f)
 
         circle = map.addCircle(circleOptions)
         marker = map.addMarker(mp)
+    }
+
+    private fun getBitmapDescriptor(@DrawableRes id: Int): BitmapDescriptor? {
+        val vectorDrawable = context!!.getDrawable(id)
+        val h = convertDpToPixel(38f, this.requireContext()).toInt()
+        val w = convertDpToPixel(38f, this.requireContext()).toInt()
+
+        vectorDrawable!!.setBounds(0, 0, w, h)
+
+        val bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bm)
+
+        vectorDrawable.draw(canvas)
+
+        return BitmapDescriptorFactory.fromBitmap(bm)
     }
 
     private fun initLocationClient() {

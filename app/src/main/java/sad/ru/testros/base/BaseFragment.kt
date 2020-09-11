@@ -1,17 +1,18 @@
 package sad.ru.testros.base
 
+import android.content.Context
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatFragment
-import kotlinx.coroutines.Dispatchers
 import sad.ru.testros.custom.Store
 import sad.ru.testros.db.HistoryDbHelper
 import sad.ru.testros.retrofit.RetrofitClientInstance
 import sad.ru.testros.retrofit.RetrofitService
-import kotlin.coroutines.CoroutineContext
 
 abstract class BaseFragment() :
     MvpAppCompatFragment(), BaseView {
@@ -51,6 +52,17 @@ abstract class BaseFragment() :
 
     fun showToast(text: String) {
         Toast.makeText(this.requireContext(), text, Toast.LENGTH_LONG).show()
+    }
+
+    fun convertDpToPixel(dp: Float, context: Context?): Float {
+        return if (context != null) {
+            val resources = context.resources
+            val metrics = resources.displayMetrics
+            dp * (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
+        } else {
+            val metrics = Resources.getSystem().displayMetrics
+            dp * (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
+        }
     }
 
     open fun isShowBottomMenu() = false

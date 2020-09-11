@@ -50,7 +50,6 @@ class CitiesFragment : BaseFragment(), CitiesView {
 
         cursor.close()
 
-        Log.d("test", listOfData.size.toString())
         adapter.swapItems(listOfData)
     }
 
