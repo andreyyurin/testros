@@ -9,6 +9,6 @@ import sad.ru.testros.navigation.AllScreens
 class RegisterPresenter : BasePresenter<RegisterView>() {
 
     fun onMainScreen() {
-        router?.replaceScreen(AllScreens.MainScreen(Consts.MAIN_SCREEN))
+        router?.newRootScreen(AllScreens.MainScreen(Consts.MAIN_SCREEN))
     }
 }

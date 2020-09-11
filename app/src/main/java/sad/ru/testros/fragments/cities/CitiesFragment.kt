@@ -35,6 +35,19 @@ class CitiesFragment : BaseFragment(), CitiesView {
         cursor!!.moveToFirst()
 
         val listOfData = ArrayList<WeatherDataFromDB>()
+
+        if (cursor.count < 1) return
+
+        listOfData.add(
+            WeatherDataFromDB(
+                cursor.getString(cursor.getColumnIndex(HistoryDbHelper.COLUMN_CITY)),
+                cursor.getString(cursor.getColumnIndex(HistoryDbHelper.COLUMN_WET)),
+                cursor.getString(cursor.getColumnIndex(HistoryDbHelper.COLUMN_CLOUD)),
+                cursor.getString(cursor.getColumnIndex(HistoryDbHelper.COLUMN_TEMPERATURE)),
+                cursor.getString(cursor.getColumnIndex(HistoryDbHelper.COLUMN_DATE))
+            )
+        )
+
         while (cursor.moveToNext()) {
             listOfData.add(
                 WeatherDataFromDB(
