@@ -28,18 +28,25 @@ class MainFragment : BaseFragment(), MainView {
 
     @SuppressLint("SetTextI18n")
     override fun setData(data: WeatherData) {
+        val dateNow = getNowDate()
+
         name.text = data.name
-        date.text = getNowDate()
+        date.text = dateNow
         temp.text = data.main.temp.toString()
         cloud.text = data.weather[0].description
         wet.text = "${data.main.humidity}%"
+
+        saveData(data, dateNow)
+    }
+
+    private fun saveData(data: WeatherData, date: String) {
+        dbHelper.addData(data, date)
     }
 
     @SuppressLint("SimpleDateFormat")
     private fun getNowDate(): String {
         val sdf = SimpleDateFormat("dd.M.yyyy hh:mm:ss")
         return sdf.format(Date())
-
     }
 
     private fun initSearchListener() {
@@ -54,7 +61,6 @@ class MainFragment : BaseFragment(), MainView {
                 findCity(text.toString())
                 search_bar.closeSearch()
             }
-
         })
     }
 

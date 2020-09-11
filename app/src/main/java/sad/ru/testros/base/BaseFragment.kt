@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatFragment
 import kotlinx.coroutines.Dispatchers
 import sad.ru.testros.custom.Store
+import sad.ru.testros.db.HistoryDbHelper
 import sad.ru.testros.retrofit.RetrofitClientInstance
 import sad.ru.testros.retrofit.RetrofitService
 import kotlin.coroutines.CoroutineContext
@@ -17,12 +18,18 @@ abstract class BaseFragment() :
 
     lateinit var service: RetrofitService
     lateinit var store: Store
+    lateinit var dbHelper: HistoryDbHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         initService()
         initStore()
+        initDbHelper()
+    }
+
+    private fun initDbHelper() {
+        dbHelper = HistoryDbHelper(this.requireContext(), null)
     }
 
     private fun initService() {
