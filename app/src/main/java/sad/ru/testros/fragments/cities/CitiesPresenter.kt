@@ -4,5 +4,4 @@ import com.arellomobile.mvp.InjectViewState
 import sad.ru.testros.base.BasePresenter
 
 @InjectViewState
-class CitiesPresenter : BasePresenter<CitiesView>() {
-}
+class CitiesPresenter : BasePresenter<CitiesView>()

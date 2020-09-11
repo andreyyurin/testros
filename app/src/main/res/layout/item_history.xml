@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="60dp">
 
@@ -10,7 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="end"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/mediumSize"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -18,7 +19,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/mediumSize"
         app:layout_constraintEnd_toStartOf="@id/tv_temp"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -13,7 +13,7 @@
         android:hint="@string/fr_register_name"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
-        android:textSize="16sp"
+        android:textSize="@dimen/mediumSize"
         app:layout_constraintBottom_toTopOf="@id/et_login" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -23,7 +23,7 @@
         android:hint="@string/fr_register_log"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
-        android:textSize="16sp"
+        android:textSize="@dimen/mediumSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +36,7 @@
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
-        android:textSize="16sp"
+        android:textSize="@dimen/mediumSize"
         app:layout_constraintTop_toBottomOf="@id/et_login" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -48,7 +48,7 @@
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
-        android:textSize="16sp"
+        android:textSize="@dimen/mediumSize"
         app:layout_constraintTop_toBottomOf="@id/et_password" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -59,7 +59,7 @@
         android:background="@drawable/bg_btn"
         android:text="@string/fr_register_register"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="@dimen/mediumSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_repassword" />

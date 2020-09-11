@@ -1,7 +1,6 @@
 package sad.ru.testros.fragments.cities
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter

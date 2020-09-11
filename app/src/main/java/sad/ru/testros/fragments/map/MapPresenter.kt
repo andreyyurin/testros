@@ -4,6 +4,4 @@ import com.arellomobile.mvp.InjectViewState
 import sad.ru.testros.base.BasePresenter
 
 @InjectViewState
-class MapPresenter : BasePresenter<MapView>() {
-
-}
+class MapPresenter : BasePresenter<MapView>()
